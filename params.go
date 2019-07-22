@@ -236,15 +236,8 @@ type Params struct {
 var MainNetParams = Params{
 	Name:        "mainnet",
 	Net:         wire.MainNet,
-	DefaultPort: "41878",
-	DNSSeeds: []DNSSeed{
-		{"dnsseeder01.emc2.foundation", true},
-		{"dnsseeder02.emc2.foundation", true},
-		{"emc2-seed01.chainworksindustries.com", true},
-		{"emc2-seed02.chainworksindustries.com", false},
-		{"emc2-seed03.chainworksindustries.com", false},
-		//up to 7
-	},
+	DefaultPort: "41888",
+	DNSSeeds: []DNSSeed{},
 
 	// Chain parameters
 	GenesisBlock:             &genesisBlock,
@@ -268,11 +261,6 @@ var MainNetParams = Params{
 	// Checkpoints ordered from oldest to newest.
 	Checkpoints: []Checkpoint{
 		//{0, newHashFromStr("4e56204bb7b8ac06f860ff1c845f03f984303b5b97eb7b42868f714611aed94b")},
-		{14871, newHashFromStr("5dedc3dd860f008c717d69b8b00f0476de8bc6bdac8d543fb58c946f32f982fa")},
-		{36032, newHashFromStr("ff37468190b2801f2e72eb1762ca4e53cda6c075af48343f28a32b649512e9a8")},
-		{51365, newHashFromStr("702b407c68091f3c97a587a8d92684666bb622f6821944424b850964b366e42c")},
-		{621000, newHashFromStr("e2bf6d219cff9d6d7661b7964a05bfea3128265275c3673616ae71fed7072981")},
-		{1410100, newHashFromStr("f6736ff2a7743014ab1902e442328f5c9928ce7f4edb2b4fd0130010cb4cebc4")},
 	},
 
 	// Consensus rule change deployments.
@@ -304,12 +292,12 @@ var MainNetParams = Params{
 
 	// Human-readable part for Bech32 encoded segwit addresses, as defined in
 	// BIP 173.
-	Bech32HRPSegwit: "emc2", // always ecm2 for main net
+	Bech32HRPSegwit: "mil", // always mil for main net
 
 	// Address encoding magics
-	PubKeyHashAddrID:        0x21, // starts with E
-	ScriptHashAddrID:        0x37, // starts with P -- was 3
-	PrivateKeyID:            0xB0, // starts with 6 (uncompressed) or T (compressed)
+	PubKeyHashAddrID:        0x32, // starts with E
+	ScriptHashAddrID:        0x30, // starts with P -- was 3
+	PrivateKeyID:            0xEF, // starts with 6 (uncompressed) or T (compressed)
 	WitnessPubKeyHashAddrID: 0x06, // starts with p2
 	WitnessScriptHashAddrID: 0x0A, // starts with 7Xh
 
